@@ -1,0 +1,247 @@
+/* ======================== */
+/* RESET DE ESTILOS */
+/* ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======================== */
+/* ESTILO GLOBAL */
+/* ======================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url(imagens/background.jpg);
+}
+
+/* ======================== */
+/* CABEÇALHO E MENU */
+/* ======================== */
+header {
+    background-color: #e63946;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animação ao passar o mouse */
+nav ul li a:hover {
+    border-radius: 5px;
+    transform: translateY(-5px);
+    color: #000000;
+}
+
+/* Linha animada abaixo do link */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* ======================== */
+/* MENU HAMBÚRGUER RESPONSIVO */
+/* ======================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #e63946;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ======================== */
+/* BANNER PRINCIPAL */
+/* ======================== */
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cta-buttons button {
+    padding: 15px 30px;
+    margin: 5px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons button:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+/* ======================== */
+/* SEÇÃO DE CATEGORIAS */
+/* ======================== */
+.categories {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    flex: 1 1 150px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================== */
+/* FORMULÁRIOS E SEÇÃO DE RESTAURANTE */
+/* ======================== */
+.form-section {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    background-color: #e63946;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #050505;
+}
+
+/* ======================== */
+/* RODAPÉ */
+/* ======================== */
+footer {
+    background-color: #e63946;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    clear: both;
+    overflow: hidden;
+}
